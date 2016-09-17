@@ -81,4 +81,17 @@ How to run
 
 ```
 
-- 
+How to test
+--------
+
+Instead of launching instances and wait for it to publish event for you, you can directly invoke publish from AWS console using undersigned payload. Just change the `instance-id` and you are good to go.
+
+```
+{
+"default": "{\"version\":\"0\",\"id\":\"760ea710-ea16-412c-a974-bb0a7611aa93\",\"detail-type\":\"EC2 Instance State-change Notification\",\"source\":\"aws.ec2\",\"account\":\"xxxx\",\"time\":\"2016-09-17T09:02:51Z\",\"region\":\"ap-southeast-1\",\"resources\":[\"arn:aws:ec2:ap-southeast-1:xxxxx:instance/i-b934de1e\"],\"detail\":{\"instance-id\":\"i-5734def0\",\"state\":\"pending\"}}"
+}
+```
+Follow the screenshot if stuck anywhere
+
+![alt Publish-Event](publish_test.png "Public-SNS-Event")
+
