@@ -36,7 +36,7 @@ function subscribe(url, cb){
  * Method: dispatch_alert
  * Description: Send alert to sns if find any violation
  * 
- * @param( topic): secrts: aws sns topic arn
+ * @param(object): payload: {message, subject}
  *
  */
 function dispatch_alert( payload, cb){
@@ -85,7 +85,8 @@ function audit_ec2_instance(instanceId, cb){
             if( res_1.status === "failure"){
                 var payload = {
                     "message": res_1.errors,
-        "subject": "[ACTION-REQUIRED] " + UTILITY_NAME + ": Tagging rules violation occurred"
+                    "subject": "[ACTION-REQUIRED] " + UTILITY_NAME 
+                                + ": Tagging rules violation occurred"
                 }
                 dispatch_alert( payload, function(err, data){
                     cb(err, res_1.errors);
@@ -211,3 +212,4 @@ module.exports = function(context, cb) {
 
 
 }
+
