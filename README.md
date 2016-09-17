@@ -1,7 +1,13 @@
 Requirement
 -----
 
+- Install [webtask clent](https://webtask.io/cli)
+- Get yourself a very strict policy controlled AWS credentials
+- Create one SNS topic and allow your aws credentials 'publish' only privileges
+
+
 Create and Add following secrets to webtask
+-------------------------------------
 
 - AWS_REGION
 - AWS_ACCESS_KEY_ID
@@ -58,3 +64,21 @@ __policygen-sns-publish-webtask-201609171542__
     ]
 }
 ```
+
+
+How to run
+-----
+
+
+- Create webtask
+
+
+```
+    wt create ec2_tag_check.js -s AWS_REGION=XXX \
+                                -s  AWS_ACCESS_KEY_ID=XXX \
+                                -s AWS_SECRET_ACCESS_KEY=XXX  \
+                                -s ALERT_TOPIC_ARN=xxx
+
+```
+
+- 
