@@ -93,5 +93,5 @@ Instead of launching instances and wait for it to publish event for you, you can
 ```
 Follow the screenshot if stuck anywhere
 
-![alt Publish-Event](publish_test.png "Public-SNS-Event")
+![alt Publish-Event](screenshots/publish_test.png "Public-SNS-Event")
 
